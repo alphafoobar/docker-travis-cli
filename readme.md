@@ -22,12 +22,12 @@ This docker image contains the following software stack:
 docker pull skandyla/travis-cli
 docker tag skandyla/travis-cli travis-cli
 ```
-
+  
 ### Build(optional)
 ```
 docker build -t travis-cli .
 ```
-
+  
 ## Travis cli usage
 [travis-ci/travis.rb#readme](https://github.com/travis-ci/travis.rb#readme)  
 
@@ -46,3 +46,6 @@ docker run --rm -v $(PWD):/project --entrypoint=travis-lint travis-cli .travis.y
 ```
 docker run -it --rm -v $(PWD):/project --entrypoint=/bin/sh travis-cli
 ```
+
+## License
+MIT
