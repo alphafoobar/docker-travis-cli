@@ -1,0 +1,14 @@
+sudo: required
+services:
+  - docker
+
+before_script:
+  - docker build -t travis-cli .
+
+script:
+  - docker run -v $(PWD):/project --rm skandyla/travis-cli version
+
+after_success:
+  - docker tag travis-cli skandyla/travis-cli:latest
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push skandyla/travis-cli:latest

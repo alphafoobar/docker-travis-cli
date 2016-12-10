@@ -17,35 +17,44 @@ This docker image contains the following software stack:
 
 ## Docker image usage
 
-### Pull and tag
+### Pull and tag (optional)
 ```
 docker pull skandyla/travis-cli
 docker tag skandyla/travis-cli travis-cli
 ```
-  
-### Build(optional)
+
+### Build on your own (optional)
 ```
 docker build -t travis-cli .
 ```
-  
+
 ## Travis cli usage
 [travis-ci/travis.rb#readme](https://github.com/travis-ci/travis.rb#readme)  
 
 
-### Encrypting environment variables
+### Running simple travis commands:
 ```
-docker run --rm -v $(PWD):/project travis-cli encrypt SECRET=123 -r org/repo
-```
-
-### Validating _.travis.yml_ with travis-lint
-```
-docker run --rm -v $(PWD):/project --entrypoint=travis-lint travis-cli .travis.yml
+docker run -v $(PWD):/project --rm skandyla/travis-cli lint .travis.yml
+docker run -v $(PWD):/project --rm skandyla/travis-cli status
 ```
 
-### run interactively inside the container
+### Working with travis commands, that require authentication:
+1. first, change your working dir to the github repo you are working on:  
+`cd your_git_project_dir`  
+
+2. login interactively inside the container:  
+`docker run -it --rm -v $(PWD):/project --entrypoint=/bin/sh skandyla/travis-cli`  
+
+3. login to travis:  
+`/project # travis login --org --github-token xxxxxxxxxxxxxxxxx`  
+For generating github token see [personal-api-tokens](https://github.com/blog/1509-personal-api-tokens) and required permissions for them: [github-oauth-scopes](https://docs.travis-ci.com/user/github-oauth-scopes/)  
+
+4. work like authenticated user with your current repository:
 ```
-docker run -it --rm -v $(PWD):/project --entrypoint=/bin/sh travis-cli
+/project # travis whoami
+/project # travis env set DOCKER_EMAIL mymail@example.com
 ```
+
 
 ## License
 MIT
