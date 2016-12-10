@@ -12,7 +12,7 @@ The purpose of this docker image is to skip ruby installation but have an abilit
 
 This docker image contains the following software stack:
 
-- `ruby:alpine` image
+- `ruby:alpine` image (alpine:3.4)
 - `travis` installed via ruby gem
 
 ## Docker image usage
