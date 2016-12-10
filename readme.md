@@ -34,8 +34,8 @@ docker build -t travis-cli .
 
 ### Running simple travis commands:
 ```
-docker run -v $(PWD):/project --rm skandyla/travis-cli lint .travis.yml
-docker run -v $(PWD):/project --rm skandyla/travis-cli status
+docker run -v $(pwd):/project --rm skandyla/travis-cli lint .travis.yml
+docker run -v $(pwd):/project --rm skandyla/travis-cli status
 ```
 
 ### Working with travis commands, that require authentication:
@@ -43,7 +43,7 @@ docker run -v $(PWD):/project --rm skandyla/travis-cli status
 `cd your_git_project_dir`  
 
 2. login interactively inside the container:  
-`docker run -it --rm -v $(PWD):/project --entrypoint=/bin/sh skandyla/travis-cli`  
+`docker run -it --rm -v $(pwd):/project --entrypoint=/bin/sh skandyla/travis-cli`  
 
 3. login to travis:  
 `/project # travis login --org --github-token xxxxxxxxxxxxxxxxx`  
