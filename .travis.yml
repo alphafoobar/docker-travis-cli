@@ -6,7 +6,7 @@ before_script:
   - docker build -t travis-cli .
 
 script:
-  - docker run -v $(PWD):/project --rm skandyla/travis-cli version
+  - docker run -v $(pwd):/project --rm skandyla/travis-cli version
 
 after_success:
   - docker tag travis-cli skandyla/travis-cli:latest
