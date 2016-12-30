@@ -55,6 +55,7 @@ For generating github token see [personal-api-tokens](https://github.com/blog/15
 ```
 
 example of adding docker environment variables:  
+```
 /project # travis env set DOCKER_EMAIL mymail@example.com
 /project # travis env set DOCKER_USERNAME buildbot
 /project # travis env set DOCKER_PASSWORD examplepass
