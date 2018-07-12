@@ -64,6 +64,18 @@ example of encrypting data:
 /project # travis encrypt BINTRAY-API-KEY --add deploy.key
 ```
 
+unset environment variable for repo:  
+```
+/project # travis env unset GH_TOKEN --private --repo skandyla/example
+```
+
+recursively update environment variables for multiple repositories:  
+```
+/project # travis login
+/project # travis repos -a --no-interactive --pro | grep some_repo_pattern | xargs -n1 travis env set GH_TOKEN $GH_TOKEN --private --repo
+```
+
+Note that `--pro` is set for private repository within paid subscription.  
 
 ## License
 MIT
