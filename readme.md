@@ -6,7 +6,8 @@ Docker-travis-cli
 ## Summary
 
 Repository name in Docker Hub: **[skandyla/travis-cli](https://hub.docker.com/r/skandyla/travis-cli/)**  
-The purpose of this docker image is to skip ruby installation but have an ability to work with travis cli   
+The purpose of this docker image is to skip ruby installation but have an ability to work with travis cli.   
+Published via automated build mechanism.  
 
 ## Info
 
