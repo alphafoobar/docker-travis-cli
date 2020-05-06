@@ -1,11 +1,13 @@
 Docker-travis-cli
 ============
 
-[![Build Status](https://travis-ci.org/skandyla/docker-travis-cli.svg?branch=master)](https://travis-ci.org/skandyla/docker-travis-cli)
+[![Build Status](https://travis-ci.org/alphafoobar/docker-travis-cli.svg?branch=master)](https://travis-ci.org/alphafoobar/docker-travis-cli)
 
 ## Summary
 
-Repository name in Docker Hub: **[skandyla/travis-cli](https://hub.docker.com/r/skandyla/travis-cli/)**  
+Repository forked from: **[skandyla/travis-cli](https://travis-ci.org/skandyla/docker-travis-cli)**  
+
+Repository name in Docker Hub: **[alphafoobar/travis-cli](https://hub.docker.com/r/alphafoobar/travis-cli/)**  
 The purpose of this docker image is to skip ruby installation but have an ability to work with travis cli.   
 Published via automated build mechanism.  
 

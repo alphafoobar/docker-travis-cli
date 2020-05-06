@@ -1,4 +1,4 @@
-FROM ruby:alpine
+FROM ruby:2.7.1-alpine3.11
 MAINTAINER Sergey Kandyla <skandyla@gmail.com>
 RUN apk add --no-cache build-base git && \
     gem install travis && \
